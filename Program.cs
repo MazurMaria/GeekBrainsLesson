@@ -29,13 +29,19 @@ namespace ConsoleApp_1
                 int userAge = Convert.ToInt16(datesDiff.TotalDays / 365);
 
                 Console.WriteLine($"Congratulatinos {useName}, you age is {userAge} ;) ");
-            }
+
+                Console.WriteLine($"Press any key to exit program");
+
+                Console.ReadKey();
+          }
 
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
 
-                Console.ReadLine();
+                Console.WriteLine($"Press any key to exit program");
+
+                Console.ReadKey();
             }
         }
     }
