@@ -18,31 +18,37 @@ namespace ConsoleApp_1
 
                 Console.WriteLine($"Hello {useName}.");
 
-                Console.WriteLine($"Enter your birthday date (please use dd.mm.yyyy format)");
+                Console.WriteLine($"Enter your birth year");
 
-                DateTime birthdayDate = Convert.ToDateTime(Console.ReadLine());
+                int birthYear = Convert.ToInt16(Console.ReadLine());
 
-                DateTime currenDate = DateTime.Now;
+                int currentYear = DateTime.Now.Year;
 
-                TimeSpan datesDiff = currenDate - birthdayDate;
+                if (birthYear <= 0 || birthYear >= currentYear)
+                {
+                    Console.WriteLine($"Is a not correct year, sorry");
+                }
 
-                int userAge = Convert.ToInt16(datesDiff.TotalDays / 365);
+                else
+                {
+                    int userAge = currentYear - birthYear;
 
-                Console.WriteLine($"Congratulatinos {useName}, you age is {userAge} ;) ");
-
-                Console.WriteLine($"Press any key to exit program");
-
-                Console.ReadKey();
-          }
+                    Console.WriteLine($"{useName}, you age is {userAge} ;) ");
+                }
+            }
 
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+            }
 
+            finally
+            {
                 Console.WriteLine($"Press any key to exit program");
 
                 Console.ReadKey();
             }
+
         }
     }
 }
