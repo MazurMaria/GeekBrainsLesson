@@ -1,54 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ConsoleApp_1
+namespace Lesson3_partt1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            try
+            int[,] array2D = new int[4, 2] { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
+
+            string space = "";
+
+            for (int i = 0; i < 4; i++)
             {
-                Console.WriteLine($"Hello world! What's your name?");
-
-                string useName = Console.ReadLine();
-
-                Console.WriteLine($"Hello {useName}.");
-
-                Console.WriteLine($"Enter your birth year");
-
-                int birthYear = Convert.ToInt16(Console.ReadLine());
-
-                int currentYear = DateTime.Now.Year;
-
-                if (birthYear <= 0 || birthYear >= currentYear)
+                for (int j = 0; j < 2; j++)
                 {
-                    Console.WriteLine($"Is a not correct year, sorry");
-                }
-
-                else
-                {
-                    int userAge = currentYear - birthYear;
-
-                    Console.WriteLine($"{useName}, you age is {userAge} ;) ");
+                    Console.WriteLine(space + array2D[i, j]);
+                    space += " ";
                 }
             }
 
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-
-            finally
-            {
-                Console.WriteLine($"Press any key to exit program");
-
-                Console.ReadKey();
-            }
-
+            Console.ReadKey();
         }
     }
 }
