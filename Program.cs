@@ -19,28 +19,32 @@ namespace Lesson3_part2
 
         static void Main(string[] args)
         {
-            string userMessage = "Введите любую строку, программа распечатает ее наоборот";
-            Console.WriteLine(userMessage);
+            string[,] seaBattle = new string[10, 10] {
+             {"X","X","X","X","X","O","X","O","X","O" },
+             {"X","O","X","O","X","X","X","O","X","O" },
+             {"X","O","X","X","X","O","X","O","X","O" },
+             {"X","O","X","O","X","O","X","O","X","O" },
+             {"X","O","X","O","X","O","X","O","X","O" },
+             {"X","X","X","O","X","O","X","O","X","O" },
+             {"X","O","X","O","X","O","X","O","X","O" },
+             {"X","O","X","O","X","X","X","O","X","O" },
+             {"X","O","X","O","X","O","X","O","X","O" },
+             {"X","O","X","O","X","O","X","O","X","O" }
+            };
 
-            string inputString = Console.ReadLine();
+            Console.WriteLine("Морской бой");
 
-            while (!UserInputIsValid(inputString))
+            for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine("Неправильный ввод!");
-                Console.WriteLine(userMessage);
-                inputString = Console.ReadLine();
+                string outputLine = string.Empty;
+
+                for (int j = 0; j < 10; j++)
+                {
+                    outputLine += seaBattle[i, j];
+                }
+
+                Console.WriteLine(outputLine);
             }
-
-            char[] inputArray = inputString.ToCharArray();
-
-            string outputString = string.Empty;
-
-            for (int i = inputArray.Length - 1; i >= 0; i--)
-            {
-                outputString += inputArray[i];
-            }
-
-            Console.WriteLine($"Перевернутая строка: {outputString}");
 
             Console.ReadKey();
 
