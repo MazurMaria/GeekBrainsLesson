@@ -4,19 +4,6 @@ namespace Lesson3_part2
 {
     internal class Program
     {
-
-        /// <summary>
-        /// Проверяет входящую строку (ввод пользователя)
-        /// </summary>
-        /// <param name="validatedString">Проверяемая строка</param>
-        /// <returns>true - строка верна, или false - строка неверна</returns>
-        static bool UserInputIsValid(string validatedString)
-        {
-            bool result = !string.IsNullOrEmpty(validatedString) && !string.IsNullOrWhiteSpace(validatedString);
-
-            return result;
-        }
-
         static void Main(string[] args)
         {
             string[,] seaBattle = new string[10, 10] {
