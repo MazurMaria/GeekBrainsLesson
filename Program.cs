@@ -4,34 +4,61 @@ namespace Lesson3_part2
 {
     internal class Program
     {
+
+        /// <summary>
+        /// Повторение ввода пользователя
+        /// </summary>
+        /// <param name="inputString">введенная пользователем строка</param>
+        /// <returns>верно введенное значение</returns>
+        static string RepeatUserInput(string inputString)
+        {
+            while (!UserInputIsValid(inputString))
+            {
+                Console.WriteLine("Неверный ввод, повторите:");
+                inputString = Console.ReadLine();
+            }
+
+            return inputString;
+        }
+
+        /// <summary>
+        /// Проверка ввода пользователя
+        /// </summary>
+        /// <param name="inputString">введенная пользователем строка</param>
+        /// <returns>true - если ввод верен, false если неверен</returns>
+        static bool UserInputIsValid(string inputString)
+        {
+            bool result = !string.IsNullOrEmpty(inputString) && !string.IsNullOrWhiteSpace(inputString);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Получить ввод пользователя
+        /// </summary>
+        /// <param name="inputString">сообщение для пользователя</param>
+        /// <returns>введенную пользователем строку</returns>
+        static string GetUserInput(string inputMessage)
+        {
+            Console.WriteLine(inputMessage);
+
+            string result = Console.ReadLine();
+
+            result = RepeatUserInput(result);
+
+            return result;
+        }
         static void Main(string[] args)
         {
-            string[,] seaBattle = new string[10, 10] {
-             {"X","X","X","X","X","O","X","O","X","O" },
-             {"X","O","X","O","X","X","X","O","X","O" },
-             {"X","O","X","X","X","O","X","O","X","O" },
-             {"X","O","X","O","X","O","X","O","X","O" },
-             {"X","O","X","O","X","O","X","O","X","O" },
-             {"X","X","X","O","X","O","X","O","X","O" },
-             {"X","O","X","O","X","O","X","O","X","O" },
-             {"X","O","X","O","X","X","X","O","X","O" },
-             {"X","O","X","O","X","O","X","O","X","O" },
-             {"X","O","X","O","X","O","X","O","X","O" }
-            };
+            string familyName = GetUserInput("Введите фамилию:");
 
-            Console.WriteLine("Морской бой");
+            string givenName = GetUserInput("Введите имя:");
 
-            for (int i = 0; i < 10; i++)
-            {
-                string outputLine = string.Empty;
+            string patronymicName = GetUserInput("Введите отчество:");
 
-                for (int j = 0; j < 10; j++)
-                {
-                    outputLine += seaBattle[i, j];
-                }
+            string outputLine = familyName + " " + givenName + " " + patronymicName;
 
-                Console.WriteLine(outputLine);
-            }
+            Console.WriteLine($"Полное имя: { outputLine}");
 
             Console.ReadKey();
 
