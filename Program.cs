@@ -48,6 +48,19 @@ namespace Lesson3_part2
 
             return result;
         }
+
+        /// <summary>
+        /// Получить ввод пользователя
+        /// </summary>
+        /// <param name="inputString">сообщение для пользователя</param>
+        /// <returns>введенную пользователем строку</returns>
+        static string GetFullName(string familyName, string givenName, string patronymicName)
+        {
+            string result = familyName + " " + givenName + " " + patronymicName;
+
+            return result;
+        }
+
         static void Main(string[] args)
         {
             string familyName = GetUserInput("Введите фамилию:");
@@ -56,9 +69,9 @@ namespace Lesson3_part2
 
             string patronymicName = GetUserInput("Введите отчество:");
 
-            string outputLine = familyName + " " + givenName + " " + patronymicName;
+            string outputLine = GetFullName(familyName, givenName, patronymicName);
 
-            Console.WriteLine($"Полное имя: { outputLine}");
+            Console.WriteLine($"Полное имя: {outputLine}");
 
             Console.ReadKey();
 
