@@ -1,8 +1,0 @@
-C:\Users\Any\source\repos\GeekBrainsLesson\bin\Debug\ConsoleApp 1.exe.config
-C:\Users\Any\source\repos\GeekBrainsLesson\bin\Debug\ConsoleApp 1.exe
-C:\Users\Any\source\repos\GeekBrainsLesson\bin\Debug\ConsoleApp 1.pdb
-C:\Users\Any\source\repos\GeekBrainsLesson\obj\Debug\HelloWord.csproj.AssemblyReference.cache
-C:\Users\Any\source\repos\GeekBrainsLesson\obj\Debug\HelloWord.csproj.SuggestedBindingRedirects.cache
-C:\Users\Any\source\repos\GeekBrainsLesson\obj\Debug\HelloWord.csproj.CoreCompileInputs.cache
-C:\Users\Any\source\repos\GeekBrainsLesson\obj\Debug\ConsoleApp 1.exe
-C:\Users\Any\source\repos\GeekBrainsLesson\obj\Debug\ConsoleApp 1.pdb
